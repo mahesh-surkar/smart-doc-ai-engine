@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Smart AI Engine</h2>
+  <input id="input" placeholder="Ask something"/>
+  <button onclick="ask()">Submit</button>
+  <p id="output"></p>
+
+  <script>
+    async function ask() {
+      let text = document.getElementById("input").value;
+      let res = await fetch("http://127.0.0.1:8000/ask", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({text})
+      });
+      let data = await res.json();
+      document.getElementById("output").innerText = data.answer;
+    }
+  </script>
+</body>
+</html>
