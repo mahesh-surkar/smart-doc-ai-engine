@@ -1,0 +1,11 @@
+[
+  {
+    "id": "rule_001",
+    "domain": "math",
+    "intent": "area_circle",
+    "conditions": ["area", "circle"],
+    "response": "Area = π × r²",
+    "confidence": 0.9,
+    "explanation": "Circle area formula"
+  }
+]
